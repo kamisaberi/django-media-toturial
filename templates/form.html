@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="/app/save/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    title:
+                </td>
+                <td>
+                    <input type="text" name="title">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    content:
+                </td>
+                <td>
+                    <input type="text" name="content">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    profile image:
+                </td>
+                <td>
+                    <input type="file" name="profile">
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2">
+
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>profile</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+
+            <td>{{ post.id }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.content }}</td>
+            <!-- <td><img src={% page.profile %}></td>  -->
+            <!-- <td>{{ load post.profile }}></td>  -->
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
