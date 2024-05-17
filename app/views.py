@@ -8,7 +8,9 @@ from .models import Post
 
 def form(request) :
     posts = list(Post.objects.all())
-    psts=[]
+    print("#############################")
+    print(posts)
+    print("#############################")
     # for post in posts:
     #     psts.append({"id" :post.id , "title" :post.title , "content":post.content , "profile" : str(post.profile)   })
         # print(post.profile)

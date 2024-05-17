@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,12 +56,10 @@
         </tr>
         {% for post in posts %}
         <tr>
-
             <td>{{ post.id }}</td>
             <td>{{ post.title }}</td>
             <td>{{ post.content }}</td>
-            <!-- <td><img src={% page.profile %}></td>  -->
-            <!-- <td>{{ load post.profile }}></td>  -->
+            <td> <img src="{{ MEDIA_URL }}{{ post.profile }}" width="50" /></td>
         </tr>
         {% endfor %}
     </table>
